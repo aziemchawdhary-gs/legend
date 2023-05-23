@@ -3,7 +3,7 @@
 source .env
 
 # Build the image
-docker build \
+podman build \
   --platform=linux/amd64 \
   --build-arg LEGEND_OMNIBUS_SDLC_VERSION=$LEGEND_OMNIBUS_SDLC_VERSION \
   --build-arg LEGEND_OMNIBUS_ENGINE_VERSION=$LEGEND_OMNIBUS_ENGINE_VERSION \

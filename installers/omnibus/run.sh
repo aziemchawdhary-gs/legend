@@ -2,7 +2,7 @@
 
 source .env
 
-docker run \
+podman run \
 	--platform=linux/amd64 \
 	-p $LEGEND_OMNIBUS_GITLAB_PORT:$LEGEND_OMNIBUS_GITLAB_PORT \
 	-p $LEGEND_OMNIBUS_ENGINE_PORT:$LEGEND_OMNIBUS_ENGINE_PORT \
@@ -10,5 +10,6 @@ docker run \
 	-p $LEGEND_OMNIBUS_STUDIO_PORT:$LEGEND_OMNIBUS_STUDIO_PORT \
 	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
 	-p $LEGEND_OMNIBUS_SUPERVISOR_PORT:$LEGEND_OMNIBUS_SUPERVISOR_PORT \
+	--volume ./dockerenv:/.dockerenv \
 	-it \
-	legend-omnibus
+	legend-omnibus 

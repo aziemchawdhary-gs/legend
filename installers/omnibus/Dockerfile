@@ -84,6 +84,8 @@ RUN chmod +x $ENGINE_DIR/run-engine.sh
 RUN wget -P $ENGINE_DIR/lib https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk15on/1.67/bcprov-jdk15on-1.67.jar
 RUN wget -P $ENGINE_DIR/lib https://repo1.maven.org/maven2/org/bouncycastle/bcpkix-jdk15on/1.67/bcpkix-jdk15on-1.67.jar
 EXPOSE ${LEGEND_OMNIBUS_ENGINE_PORT}
+EXPOSE 8000/tcp
+EXPOSE 8000/udp
 
 # ---------------- Setup SDLC ----------------
 ARG SDLC_DIR=/app/sdlc

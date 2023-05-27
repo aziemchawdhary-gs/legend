@@ -6,10 +6,11 @@ podman run \
 	--platform=linux/amd64 \
 	-p $LEGEND_OMNIBUS_GITLAB_PORT:$LEGEND_OMNIBUS_GITLAB_PORT \
 	-p $LEGEND_OMNIBUS_ENGINE_PORT:$LEGEND_OMNIBUS_ENGINE_PORT \
+  -p 8000:8000 \
 	-p $LEGEND_OMNIBUS_SDLC_PORT:$LEGEND_OMNIBUS_SDLC_PORT \
 	-p $LEGEND_OMNIBUS_STUDIO_PORT:$LEGEND_OMNIBUS_STUDIO_PORT \
 	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
 	-p $LEGEND_OMNIBUS_SUPERVISOR_PORT:$LEGEND_OMNIBUS_SUPERVISOR_PORT \
-	--volume ./dockerenv:/.dockerenv \
+  --volume ./dockerenv:/.dockerenv \
 	-it \
-	legend-omnibus 
+	localhost/legend-omnibus:latest
